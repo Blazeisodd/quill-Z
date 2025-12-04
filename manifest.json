@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "quill-Z",
+  "version": "1.1.0",
+  "description": "Simulate typing/pasting for Quill.org with Tampermonkey-style answer revealer.",
+  "icons": {
+    "16": "Z.png",
+    "48": "Z.png",
+    "128": "Z.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "Z.png",
+      "48": "Z.png",
+      "128": "Z.png"
+    }
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.quill.org/*"],
+      "js": ["main.js", "content.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
